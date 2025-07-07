@@ -91,20 +91,6 @@ Super-Resolution:
 
 ✅ Visual Perceptual Quality
 
-📸 Dataset
-📁 Custom dataset under sample img/
-
-Grayscale images in sample img/grayscale
-
-Color images in sample img/color
-
-🔓 Public dataset suggestions:
-
-ImageNet
-
-COCO Dataset
-
-DIV2K (for SRGAN)
 
 📌 Future Improvements
 🔁 Add attention mechanism to colorization decoder
@@ -116,6 +102,7 @@ DIV2K (for SRGAN)
 🎥 Support real-time video colorization
 
 🧑‍💻 Authors
+
 Ansh Motghare
 
 Swapnil Patil
