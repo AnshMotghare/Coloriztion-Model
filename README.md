@@ -1,9 +1,9 @@
 🖼️ Image Colorization and Super-Resolution
 A deep learning project that transforms grayscale images into color and enhances their resolution using two separate neural networks:
 
-Image Colorization using a VGG16-based autoencoder (TensorFlow)
+🎨 Image Colorization using a VGG16-based autoencoder (TensorFlow)
 
-Image Super-Resolution using SRGAN (PyTorch)
+🔍 Image Super-Resolution using SRGAN (PyTorch)
 
 🚀 Features
 ✅ Converts grayscale images to realistic colored images
@@ -18,31 +18,13 @@ Image Super-Resolution using SRGAN (PyTorch)
 
 ✅ Modular architecture for easy training and inference
 
-📂 Project Structure
-pgsql
-Copy
-Edit
-├── models/                  # Contains pre-trained model weights
-│   ├── colorization_model.h5
-│   └── srgan_generator.pth
-├── sample img/
-│   ├── grayscale/           # Grayscale test images
-│   └── color/               # Ground truth color images (optional)
-├── streamlit_app.py         # Unified Streamlit app
-├── train_colorization.py    # VGG16-based model training
-├── train_srgan.py           # SRGAN training script
-├── utils/
-│   ├── preprocess.py        # Image loading & preprocessing utilities
-│   └── postprocess.py       # Color/Lab to RGB conversion, tensor handling
-├── README.md
-└── requirements.txt
 🧠 Model Architectures
 🎨 Colorization Model (TensorFlow)
 Based on VGG16 encoder
 
 Custom decoder to predict a and b channels of Lab color space
 
-Loss: MSE between predicted and true ab channels
+Loss: Mean Squared Error (MSE) between predicted and true ab channels
 
 Input size: 128x128 grayscale image
 
@@ -55,37 +37,12 @@ Generator + Discriminator architecture
 
 Loss: Content loss + Adversarial loss (VGG perceptual loss)
 
-Trained on low-res (LR) and high-res (HR) image pairs
+Input: Low-res (LR) image
 
-💻 Setup Instructions
-1. Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/image-colorization-super-resolution.git
-cd image-colorization-super-resolution
-2. Create Conda Environments (Optional but Recommended)
-For Colorization (TensorFlow)
-bash
-Copy
-Edit
-conda create -n colorization-env python=3.9
-conda activate colorization-env
-pip install -r requirements_colorization.txt
-For Super-Resolution (PyTorch)
-bash
-Copy
-Edit
-conda create -n srgan-env python=3.9
-conda activate srgan-env
-pip install -r requirements_srgan.txt
-3. Run the Streamlit App
-bash
-Copy
-Edit
-streamlit run streamlit_app.py
+Output: High-res (HR) image
+
 🏋️‍♂️ Training Your Own Models
-Colorization Model
+🎨 Colorization Model
 bash
 Copy
 Edit
@@ -94,12 +51,12 @@ Input: Custom dataset of color images
 
 Output: Trained .h5 model
 
-Super-Resolution (SRGAN)
+🔍 Super-Resolution (SRGAN)
 bash
 Copy
 Edit
 python train_srgan.py
-Input: LR and HR image pairs (can be generated with downsampling)
+Input: LR and HR image pairs
 
 Output: Trained generator.pth
 
@@ -107,41 +64,41 @@ Output: Trained generator.pth
 Grayscale Input	Colorized Output	Super-Resolved Output
 
 🛠️ Technologies Used
-TensorFlow / Keras – VGG16 encoder, custom decoder
+🧠 TensorFlow / Keras – VGG16 encoder, custom decoder
 
-PyTorch – SRGAN architecture
+🔥 PyTorch – SRGAN architecture
 
-OpenCV, PIL – Image handling
+🖼️ OpenCV, PIL – Image loading & manipulation
 
-Streamlit – Interactive Web App
+🌐 Streamlit – Web interface
 
-Matplotlib / Seaborn – Visualization
+📊 Matplotlib / Seaborn – Visualization
 
-scikit-image – Lab color space conversion
+🎨 scikit-image – Color space conversion
 
 📊 Evaluation Metrics
 Colorization:
 
-Mean Squared Error (MSE)
+✅ Mean Squared Error (MSE)
 
-Structural Similarity Index (SSIM)
+✅ Structural Similarity Index (SSIM)
 
 Super-Resolution:
 
-Peak Signal-to-Noise Ratio (PSNR)
+✅ Peak Signal-to-Noise Ratio (PSNR)
 
-SSIM
+✅ SSIM
 
-Perceptual quality (visual inspection)
+✅ Visual Perceptual Quality
 
 📸 Dataset
-Custom dataset under sample img/
+📁 Custom dataset under sample img/
 
 Grayscale images in sample img/grayscale
 
-Corresponding color images in sample img/color
+Color images in sample img/color
 
-You can also use public datasets like:
+🔓 Public dataset suggestions:
 
 ImageNet
 
@@ -150,16 +107,19 @@ COCO Dataset
 DIV2K (for SRGAN)
 
 📌 Future Improvements
-Add attention mechanisms to colorization decoder
+🔁 Add attention mechanism to colorization decoder
 
-Implement perceptual loss in colorization
+🎯 Integrate perceptual loss for better visual fidelity
 
-Replace SRGAN with BSRGAN for better fidelity
+🔄 Replace SRGAN with BSRGAN
 
-Allow batch uploading and real-time video colorization
+🎥 Support real-time video colorization
 
 🧑‍💻 Authors
 Ansh Motghare
+
 Swapnil Patil
+
 Prajwal Patole
+
 Rohan Nikiam
